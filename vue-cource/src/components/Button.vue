@@ -8,13 +8,16 @@
         props:{
             text:{
                 type:String,
-                default:"Add Task"
+                default:'I am a button'
             },
-            color:String
+            color:{
+                type:String,
+                default:'green'
+            }
         },
         methods:{
             addTask(){
-                console.log("Hi");
+                this.$emit('btn-click');
             }
         },
     }

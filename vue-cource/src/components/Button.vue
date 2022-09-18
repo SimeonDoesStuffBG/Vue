@@ -2,7 +2,7 @@
     <button @click="addTask()" :style="{background:color}" class="btn">{{text}}</button>
 </template>
 
-<script lang="ts">
+<script>
     export default{
         name:"Button",
         props:{

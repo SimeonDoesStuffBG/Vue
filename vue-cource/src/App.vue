@@ -2,24 +2,35 @@
   <div class="container">
     <h1>Hello dude</h1>
     <Header title="Task Tracker"/>
-    <Tasks :tasks="tasks"/>
+    <AddTask />
+    <Tasks @toggle-task="toggleTask" @delete-task="deleteTask" :tasks="tasks"/>
   </div>
  
 </template>
 
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
+<script>
 import Header from './components/Header.vue';
 import Tasks from './components/Tasks.vue';
+import AddTask from './components/AddTask.vue';
 
-@Options({
+export default{
+  name:"App",
   components: {
     Header,
-    Tasks
+    Tasks,
+    AddTask
   },
   data(){
     return {
       tasks:[]
+    }
+  },
+  methods:{
+    deleteTask(id){
+      this.tasks=this.tasks.filter(task=>task.id!==id);
+    },
+    toggleTask(id){
+      this.tasks=this.map(task=>(task.id!==id)?task:{...task, reminder:!task.reminder});
     }
   },
   created(){
@@ -43,8 +54,7 @@ import Tasks from './components/Tasks.vue';
         reminder:false
       }]
   }
-})
-export default class App extends Vue {}
+}
 </script>
 
 <style>

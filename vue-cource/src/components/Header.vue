@@ -8,14 +8,15 @@
 <script lang="ts">
     import Button from './Button.vue';
 
+
     export default{
         name:'Header',
         props:{
             title:String,
         },
         components:{
-            Button,
-        }
+    Button,
+}
     }
 </script>
 

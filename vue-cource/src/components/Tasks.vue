@@ -1,16 +1,19 @@
 <template>
     <div :key="task.id" v-for="task in tasks">
-        <Task :task="task"/>
+        <Task @toggle-task="$emit('toggle-task',task.id)" 
+        @delete-task="$emit('delete-task',task.id)" 
+        :task="task"/>
     </div>
 </template>
 
-<script lang="ts">
+<script>
 import Task from './Task.vue';
     export default{
     name: "Tasks",
     props: {
         tasks: Array,
     },
-    components: { Task }
+    components: { Task },
+    emits:['delete-task','toggle-task'],
 }
 </script>

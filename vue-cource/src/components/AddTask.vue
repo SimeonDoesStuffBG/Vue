@@ -24,7 +24,7 @@
                 text:'',
                 day:'',
                 reminder:false,
-                id:4
+               
             }
         },
         methods:{
@@ -35,13 +35,12 @@
                     return;
                 }
                 let newTask = {
-                    id:this.id,
+                   
                     text:this.text,
                     day:this.day,
                     reminder:this.reminder
                 }
-                this.id++;
-                
+                                
                 this.$emit('add-task', newTask);
                 
                 this.text='';

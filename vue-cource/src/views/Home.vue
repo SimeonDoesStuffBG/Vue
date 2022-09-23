@@ -1,5 +1,5 @@
 <template>
-    <div><AddTask v-if="showAddTask" @add-task="addTask"/></div>
+    <div v-if="showAddTask"><AddTask @add-task="addTask"/></div>
     <Tasks @toggle-task="toggleTask" @delete-task="deleteTask" :tasks="tasks"/>
 </template>
 
@@ -77,6 +77,7 @@
                 return data;
               },
               async created(){
+                console.log("hello");
                 this.tasks= await this.fetchTasks();
               }
             }

@@ -1,17 +1,20 @@
 <template>
-    <div v-if="showAddTask"><AddTask @add-task="addTask"/></div>
+    <AddTask @add-task="addTask"/>
     <Tasks @toggle-task="toggleTask" @delete-task="deleteTask" :tasks="tasks"/>
+    <!--<Tasks @toggle-task="toggleTask" @delete-task="deleteTask" :tasks="tasks"/>-->
 </template>
 
 <script>
-    import Tasks from '../components/Tasks';
-    import AddTask from '../components/AddTask';
+   
+    
+    import Tasks from '../components/Tasks.vue';
+    import AddTask from '../components/AddTask.vue';
 
     export default{
         name:"Home",
         components:{
-            Tasks,
-            AddTask,
+          Tasks,
+          AddTask
         },
         data(){
             return {

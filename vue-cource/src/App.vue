@@ -10,12 +10,14 @@
 <script>
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
+import Tasks from './components/Tasks.vue';
 
 export default{
   name:"App",
   components: {
     Header,
-    Footer
+    Footer,
+    Tasks
 },
   data(){
     return {
